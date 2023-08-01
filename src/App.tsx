@@ -1,9 +1,16 @@
-import '@fontsource/roboto-condensed';
-import './App.css'
-
+import AnimatedLogo from './components/AnimatedLogo';
+import Navbar from './components/Navbar';
+import navigation_bar_items from './data/navigation_bar_items.json';
 
 export default function App() {
-  return (<></>);
+  return (
+    <div className='w-1/2 m-auto'>
+      <Navbar
+        logo={<AnimatedLogo src={'logo.png'} />}
+        items={navigation_bar_items.items}
+      />
+    </div>
+  );
 }
 
 
