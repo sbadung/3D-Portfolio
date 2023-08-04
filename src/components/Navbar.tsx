@@ -14,12 +14,7 @@ interface NavbarProps {
 function ItemComponent({ href, label }: NavbarItem) {
   return (
     <li
-      className='
-        m-0
-        border-dotted border-2
-        transition-all 
-        text-black border-invisible hover:border-gray-950
-      '>
+      className='m-0 border-solid'>
       <a href={href}>{label}</a>
     </li>
   );
@@ -36,7 +31,7 @@ function ItemCollectionComponent(props: { items: NavbarItem[] }) {
 
 export default function Navbar({ logo, items }: NavbarProps) {
   return (
-    <nav className='flex justify-between align-middle m-0 p-0'>
+    <nav className='text-white flex justify-between align-middle m-0 p-0'>
       <span className='h-24 w-24'>{logo}</span>
       <div className='p-6'><ItemCollectionComponent items={items} /></div>
     </nav>
