@@ -14,7 +14,8 @@ export default {
 
       },
       fontFamily: {
-        condensed: ['Roboto Condensed', 'sans-serif']
+        condensed: ['Roboto Condensed', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
       }
     }
   },
