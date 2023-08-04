@@ -1,39 +1,40 @@
-import '../App.css'
-import { ReactNode } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import AnimatedLogo from "./AnimatedLogo";
 
-export interface NavbarItem {
-  href: string;
-  label: string;
-}
+const Navbar: React.FC = () => {
+  const routes = [
+    { value: "projects", href: "projects" },
+    { value: "about", href: "about" },
+    { value: "contact", href: "contact" }
+  ];
 
-interface NavbarProps {
-  logo: ReactNode;
-  items: NavbarItem[]
-}
+  const initial = { opacity: 0, y: -180 };
+  const animate = { opacity: 1, y: 0 };
+  const transition = {
+    ease: "easeInOut",
+    duration: 1.5,
+    delay: 3,
+  };
 
-function ItemComponent({ href, label }: NavbarItem) {
   return (
-    <li
-      className='m-0 border-solid'>
-      <a href={href}>{label}</a>
-    </li>
+    <motion.div initial={initial} animate={animate} transition={transition}>
+      <div className="flex justify-between p-5">
+        <div className="font-condensed font-bold text-white hover:underline">
+          <AnimatedLogo src="logo.png" />
+        </div>
+        <nav className="flex justify-between">
+          {routes.map(route => {
+            return (
+              <li className="list-none mx-10 font-condensed">
+                <a href={route.href} className="text-white no-underline">{route.value}</a>
+              </li>
+            );
+          })}
+        </nav>
+      </div>
+    </motion.div>
   );
-}
+};
 
-function ItemCollectionComponent(props: { items: NavbarItem[] }) {
-  const { items } = props;
-  return (
-    <ul className='flex gap-6 content-center m-0 p-0'>{
-      items.map(item => <ItemComponent href={item.href} label={item.label} />)
-    }</ul>
-  );
-}
-
-export default function Navbar({ logo, items }: NavbarProps) {
-  return (
-    <nav className='text-white flex justify-between align-middle m-0 p-0'>
-      <span className='h-24 w-24'>{logo}</span>
-      <div className='p-6'><ItemCollectionComponent items={items} /></div>
-    </nav>
-  );
-}
+export default Navbar;
