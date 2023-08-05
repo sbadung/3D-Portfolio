@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const transition = {
     ease: "easeInOut",
     duration: 1.5,
-    delay: 0.6,
+    delay: 0.4,
   };
   
   return (
