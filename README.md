@@ -1,5 +1,8 @@
 # 3D Portfolio
-Personal portfolio website using Vite, Typescript, React along with the [React Spline Library](https://github.com/splinetool/react-spline) for [Spline](https://spline.design/) 3D Models and [Framer Motion](https://www.framer.com/motion/)
+Portfolio Website developed using Vite, React and Typescript along with the [Framer Motion](https://www.framer.com/motion/) library for smooth animations and the [React Spline Library](https://github.com/splinetool/react-spline) for [Spline](https://spline.design/) 3D models
+
+Preview: **https://sbadung.github.io/3D-Portfolio/**
+
 
 ## Folder Structure
 ```sh
@@ -10,14 +13,39 @@ src
 ├── App.tsx
 ├── components
 │   ├── AnimatedLogo.tsx
+│   ├── Hero.tsx
+│   ├── Loader.tsx
 │   └── Navbar.tsx
 ├── context
-├── data
-│   └── navigation_bar_items.json
 ├── index.css
 ├── main.tsx
 └── vite-env.d.ts
 ```
+
+## Scripts
+Install all the dependencies
+
+### `npm i`
+See [`package.json`](./package.json)
+
+### `npm run dev`
+Run the application locally in developer mode. 
+
+The application runs on http://localhost:5173
+
+## `npm run build`
+Builds the application for production. Files are saved in the [`dist`](./dist/) directory. 
+
+## Deployment on GitHub
+Learn more: https://vitejs.dev/guide/static-deploy.html
+See the configuration for deployment on GitHub: [vite.config.ts](./vite.config.ts)
+
+```sh
+npm run build
+git add dist -f
+git commit -m "dist version $DIST_VERSION"
+git subtree push --prefix dist origin gh-pages
+```   
 
 ## Template
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -42,11 +70,3 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
-### Tutoring
-https://www.youtube.com/watch?v=lPJVi797Uy0
-https://www.youtube.com/@DesignCodeTeam/videos
-https://www.youtube.com/watch?v=uYp_ipIasYE
-https://www.youtube.com/watch?v=fM2MA2PTckM
-https://www.youtube.com/watch?v=T33NN_pPeNI
-https://www.youtube.com/watch?v=FJ44qmE5odc
